@@ -79,17 +79,10 @@
                 <a href="#">Home</a>
                 <a href="#">Leaderboard</a>
                 <a href="#">Merch</a>
-                
             </div>
-            <div class="user-profile">
-                <?php
-                if (Auth::check()) {
-                    $user = Auth::user();
-                    echo '<span>' . $user->name . '</span>';
-                    
-                }
-                ?>
-                <img src="https://media.discordapp.net/attachments/918918944809713715/1162323141595504660/POV_de_wekker_gaat_en_moet_naar_school.gif?ex=653b84c7&is=65290fc7&hm=ca92a5e86a23c39d9b6b74a89755e56412739bfcf5574d781c3e775f72725c4d&" alt="Profile Photo">
+            <div class="right-navigation">
+            <a href="{{ route('login') }}">Login</a>
+<a href="{{ route('register') }}">Register</a>
             </div>
         </div>
     </div>

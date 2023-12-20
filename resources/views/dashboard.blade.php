@@ -3,6 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
     <title>Laravel</title>
 
     <!-- Fonts -->
@@ -78,9 +80,9 @@
     <div class="dashboard-container">
         <div class="navigation-bar">
             <div class="left-navigation">
-                <a href="#">Home</a>
-                <a href="#">Leaderboard</a>
-                <a href="#">Merch</a>
+                <a href="{{ route('dashboard') }}">Home</a>
+                <a href="{{ route('leaderbord') }}">Leaderboard</a>
+                <a href="{{ route('merch') }}">Merch</a>
             </div>
             <div class="user-profile">
                 <span>{{ __("") }} {{ auth()->user()->name }}</span>

@@ -23,4 +23,12 @@ Route::view('profile', 'profile')
     ->middleware(['auth'])
     ->name('profile');
 
+Route::view('merch', 'merch')
+    ->middleware(['auth'])
+    ->name('merch');
+
+Route::view('leaderbord', 'leaderbord')
+    ->middleware(['auth'])
+    ->name('leaderbord');
+
 require __DIR__.'/auth.php';
