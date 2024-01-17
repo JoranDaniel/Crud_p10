@@ -1,34 +1,19 @@
 <?php
 
+use App\Http\Controllers\MerchController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+// Your existing routes...
 
-Route::view('/', 'welcome');
+Route::middleware(['auth'])->group(function () {
+    Route::view('dashboard', 'dashboard')->middleware('verified')->name('dashboard');
+    Route::view('profile', 'profile')->name('profile');
 
-Route::view('dashboard', 'dashboard')
-    ->middleware(['auth', 'verified'])
-    ->name('dashboard');
+    Route::get('merch', [MerchController::class, 'index'])->name('merch.index');
+    Route::get('merch/create', [MerchController::class, 'create'])->name('merch.create');
+    Route::post('merch', [MerchController::class, 'store'])->name('merch.store');
 
-Route::view('profile', 'profile')
-    ->middleware(['auth'])
-    ->name('profile');
-
-Route::view('merch', 'merch')
-    ->middleware(['auth'])
-    ->name('merch');
-
-Route::view('leaderbord', 'leaderbord')
-    ->middleware(['auth'])
-    ->name('leaderbord');
+    Route::view('leaderbord', 'leaderbord')->name('leaderbord');
+});
 
 require __DIR__.'/auth.php';

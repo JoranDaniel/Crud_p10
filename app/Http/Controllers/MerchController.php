@@ -7,6 +7,12 @@ use App\Models\Merch;
 
 class MerchController extends Controller
 {
+    public function index()
+    {
+        // You can modify this method to retrieve and display merch items
+        return view('merch');
+    }
+
     public function create()
     {
         return view('merch.create');

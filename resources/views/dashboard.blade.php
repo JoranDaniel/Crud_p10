@@ -82,7 +82,7 @@
             <div class="left-navigation">
                 <a href="{{ route('dashboard') }}">Home</a>
                 <a href="{{ route('leaderbord') }}">Leaderboard</a>
-                <a href="{{ route('merch') }}">Merch</a>
+                <a href="{{ route('merch.index') }}">Merch</a>
             </div>
             <div class="user-profile">
                 <span>{{ __("") }} {{ auth()->user()->name }}</span>
